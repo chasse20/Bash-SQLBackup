@@ -32,7 +32,7 @@ then
         ROTATION_DATE=`date --date="$ROTATION_DAILY day ago" +%F_%H`
 elif [ $1 == "w" ] && [ $ROTATION_WEEKLY -gt 0 ]
 then
-        ROTATION_DATE=`date --date="$(($ROTATION_WEEKLY*7)) day ago" +%F_%H`
+        ROTATION_DATE=`date --date="$ROTATION_WEEKLY week ago" +%F_%H`
 elif [ $1 == "m" ] && [ $ROTATION_MONTHLY -gt 0 ]
 then
         ROTATION_DATE=`date --date="$ROTATION_MONTHLY month ago" +%F_%H`

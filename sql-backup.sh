@@ -22,7 +22,6 @@ ROTATION_MONTHLY=12
 ############################
 # CALCULATE ROTATIONS
 ############################
-DATE=`date +%F_%H`
 ROTATION_DATE=''
 
 if [ $1 == "h" ] && [ $ROTATION_HOURLY -gt 0 ]
@@ -44,6 +43,8 @@ fi
 ############################
 # BACKUP AND REMOVE ROTATED
 ############################
+DATE=`date +%F_%H`
+
 for i in "${DB_NAMES[@]}"
 do
         mysqldump -u $DB_USER -p$DB_PASSWORD $i | gzip > $LOCAL_DIR/$i-$1-$DATE.sql.gz

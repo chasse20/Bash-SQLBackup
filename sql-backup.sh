@@ -22,7 +22,7 @@ ROTATION_MONTHLY=12
 ############################
 # CALCULATE ROTATIONS
 ############################
-ROTATION_DATE=''
+ROTATION_DATE=""
 
 if [ $1 == "h" ] && [ $ROTATION_HOURLY -gt 0 ]
 then

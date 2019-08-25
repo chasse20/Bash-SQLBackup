@@ -59,8 +59,8 @@ do
 	DB_USER="$(grep -oE '\$wgDBuser = \".*\";' $LOCAL_SETTINGS | tail -1 | sed 's/$wgDBuser = \"//g;s/\";//g')"
 	DB_PASSWORD="$(grep -oE '\$wgDBpassword = \".*\";' $LOCAL_SETTINGS | tail -1 | sed 's/$wgDBpassword = \"//g;s/\";//g')"
 	WIKI_NAME="$(grep -oE '\$wgMetaNamespace = \".*\";' $LOCAL_SETTINGS | tail -1 | sed 's/$wgMetaNamespace = \"//g;s/\";//g')"
-	FILE_NAME="$WIKI_NAME-$1-$DATE"
-	OLD_FILE_NAME="$WIKI_NAME-$1-$ROTATION_DATE"
+	FILE_NAME="$WIKI_NAME-$DATE-$1"
+	OLD_FILE_NAME="$WIKI_NAME-$ROTATION_DATE-$1"
 
 	# Make Wiki ReadOnly
 	echo $WIKI_READ_ONLY >> $LOCAL_SETTINGS

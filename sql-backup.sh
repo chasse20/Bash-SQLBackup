@@ -47,9 +47,11 @@ DATE=`date +%F_%H`
 
 for i in "${DB_NAMES[@]}"
 do
-	mysqldump -u $DB_USER -p$DB_PASSWORD $i | gzip > $LOCAL_DIR/$i-$1-$DATE.sql.gz
+	# Local dump
+	mysqldump -u $DB_USER -p $DB_PASSWORD $i | gzip > $LOCAL_DIR/$i-$DATE-$1.sql.gz
 	rm -f $LOCAL_DIR/$i-$1-$ROTATION_DATE.sql.gz
 
+	# FTP
 	ftp -n $FTP_SERVER << END_SCRIPT
 	user "$FTP_USERNAME" "$FTP_PASSWORD"
 	binary

@@ -66,7 +66,7 @@ do
 	echo $WIKI_READ_ONLY >> $LOCAL_SETTINGS
 
 	# Local dump
-	mysqldump -u $DB_USER -p $DB_PASSWORD $DB_NAME | gzip > $LOCAL_DIR/$FILE_NAME.sql.gz
+	mysqldump -u $DB_USER -p$DB_PASSWORD $DB_NAME | gzip > $LOCAL_DIR/$FILE_NAME.sql.gz
 	rm -f $LOCAL_DIR/$OLD_FILE_NAME.sql.gz
 
 	tar --exclude-vcs -zcf $LOCAL_DIR/$FILE_NAME.files.tgz $i

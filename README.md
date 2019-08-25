@@ -1,5 +1,5 @@
 # Shell-BackupScripts
-Backup scripts designed to be used as Cron jobs (tested with Ubuntu). These scripts will store both local backups and upload via FTP. Includes rotational feature to cycle through and purge older backups.
+Backup scripts designed to be used as Cron jobs (tested with Ubuntu 18.04). These scripts will store both local backups and upload via FTP. Includes rotational feature to cycle through and purge older backups.
 
 Invocation must include either "h" for hourly, "d" for daily, "w" for weekly, or "m" for monthly (e.g., sudo ./sql-backup.sh h)
 

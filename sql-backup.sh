@@ -55,8 +55,8 @@ do
 	binary
 	cd $FTP_DIR
 	lcd $LOCAL_DIR
-	put "$i-$1-$DATE.sql.gz"
-	delete "$i-$1-$ROTATION_DATE.sql.gz"
+	put "$i-$DATE-$1.sql.gz"
+	delete "$i-$ROTATION_DATE-$1.sql.gz"
 	bye
 END_SCRIPT
 done
